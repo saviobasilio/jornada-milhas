@@ -16,7 +16,7 @@ export class TokenService {
   }
 
   retornarToken() : string | null {
-    return localStorage.getItem(KEY)
+    return localStorage.getItem(KEY) ?? ""
   }
 
   possuiToken() :boolean {

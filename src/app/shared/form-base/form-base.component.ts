@@ -25,17 +25,17 @@ export class FormBaseComponent implements OnInit{
 
   ngOnInit() {
     this.cadastroForm = this.formBuilder.group({
-      nome: ['Usuario Teste', Validators.required],
+      nome: [null, Validators.required],
       nascimento: [null, [Validators.required]],
-      cpf: ['123', [Validators.required]],
-      cidade: ['Teste', Validators.required],
-      email: ['teste@gmail.com', [Validators.required, Validators.email]],
-      senha: ['123456', [Validators.required, Validators.minLength(3)]],
+      cpf: [null, [Validators.required]],
+      cidade: [null, Validators.required],
+      email: [null, [Validators.required, Validators.email]],
+      senha: [null, [Validators.required, Validators.minLength(3)]],
       genero: ['outro'],
-      telefone: ['123', Validators.required],
+      telefone: [null, Validators.required],
       estado: this.estadoControl,
-      confirmarEmail: ['teste@gmail.com', [Validators.required, Validators.email, FormValidations.equalTo('email')]],
-      confirmarSenha: ['123456', [Validators.required, Validators.minLength(3), FormValidations.equalTo('senha')]],
+      confirmarEmail: [null, [Validators.required, Validators.email, FormValidations.equalTo('email')]],
+      confirmarSenha: [null, [Validators.required, Validators.minLength(3), FormValidations.equalTo('senha')]],
       aceitarTermos: [false, [Validators.required]]
     });
 

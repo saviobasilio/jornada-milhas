@@ -8,13 +8,11 @@ import { PessoaUsuaria } from '../types/types';
   providedIn: 'root'
 })
 export class CadastroService {
-  apiUrl: string = environment.apiUrl;
 
-  constructor(private httpClient: HttpClient) {
+  private apiUrl: string = environment.apiUrl;
+  constructor(private http: HttpClient) { }
 
-   }
-
-   enviar(pessoaUsuaria: PessoaUsuaria) : Observable<PessoaUsuaria> {
-    return this.httpClient.post<PessoaUsuaria>(`${this.apiUrl}\auth/cadastro`, pessoaUsuaria)
-   }
+  cadastrar(pessoaUsuaria: PessoaUsuaria): Observable<PessoaUsuaria> {
+    return this.http.post<PessoaUsuaria>(`${this.apiUrl}/auth/cadastro`, pessoaUsuaria);
+  }
 }

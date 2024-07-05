@@ -3,7 +3,7 @@
 </app-banner>
 <app-container>
     <h2>Promoções</h2>
-    <app-form-busca></app-form-busca>
+    <app-form-busca (realizarBusca)="navegarParaBusca($event)"></app-form-busca>
     <div class="card-wrapper">
         <app-card-busca  *ngFor="let prom of listaPromocoes" [promocao]=prom></app-card-busca>
     </div>

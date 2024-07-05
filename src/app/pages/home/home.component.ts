@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { PromocaoService } from 'src/app/core/services/promocao.service';
 import { Promocao } from 'src/app/core/types/types';
 
@@ -11,7 +12,8 @@ export class HomeComponent implements OnInit {
   public listaPromocoes!: Promocao[];
 
   constructor(
-    private servicoPromocao: PromocaoService
+    private servicoPromocao: PromocaoService,
+    private router: Router
   ){
 
   }
@@ -22,5 +24,10 @@ export class HomeComponent implements OnInit {
         this.listaPromocoes = resposta;
       }
     );
+  }
+
+  navegarParaBusca(event: any) 
+  {
+    this.router.navigate(['busca']);
   }
 }

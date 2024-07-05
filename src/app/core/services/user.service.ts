@@ -17,10 +17,10 @@ export class UserService {
     }
   }
 
-  decodificarJWT(){
+  private decodificarJWT() {
     const token = this.tokenService.retornarToken();
     const user = jwt_decode(token) as PessoaUsuaria;
-    this.userSubject.next(user)
+    this.userSubject.next(user);
   }
 
   retornarUser(){
